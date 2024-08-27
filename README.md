@@ -13,17 +13,16 @@ Add the following to your rector config:
 ...
 use Sdn\RectorCustomRules\Rules\ConvertProbArgVarNamesToCamelCaseRector
 use Sdn\RectorCustomRules\Rules\ConvertMethodsNameToCamelCaseRector
-use 
+use Sdn\RectorCustomRules\Rules\MethodParamsAndArgsToNewLinesRector
 ...
 
 $rectorConfig
     ->rule(
         ConvertProbArgVarNamesToCamelCaseRector::class,
-        ConvertMethodsNameToCamelCaseRector::class
+        ConvertMethodsNameToCamelCaseRector::class,
+        MethodParamsAndArgsToNewLinesRector::class
    );
 ```
-
-## Rector rules
 
 ### ConvertProbArgVarNamesToCamelCaseRector
 
@@ -117,6 +116,41 @@ class MethodsNameToCamelCase
 +    private function testPrivateFunctionThree(string $firstParameter, string $secondParameter): string
      {
          return $firstParameter . '-' . $secondParameter;
+     }
+
+```
+
+### MethodParamsAndArgsToNewLinesRector
+
+Put each parameter of a method declaration or method call on a separate line if there are more than 3 parameters.
+In order for the indentation to be correct, php-cs fix must be executed after the rector.
+
+```diff
+ class MethodParamsAndArgsToNewLines
+ {
+-    public function testPublicFunction(string $firstParameter, string $secondParameter, string $thirdParameter, string $fourthParameter): string
++    public function testPublicFunction(
++       string $firstParameter, 
++       string $secondParameter, 
++       string $thirdParameter, 
++       string $fourthParameter): string
+     {
+-        return $this->testPublicFunctionTwo($firstParameter, $secondParameter, $thirdParameter, $fourthParameter);
++        return $this->testPublicFunctionTwo(
++        $firstParameter, 
++        $secondParameter, 
++        $thirdParameter, 
++        $fourthParameter);
+     }
+
+-    public function testPublicFunctionTwo(string $firstParameter, string $secondParameter, string $thirdParameter, string $fourthParameter): string
++    public function testPublicFunctionTwo(
++       string $firstParameter, 
++       string $secondParameter, 
++       string $thirdParameter, 
++       string $fourthParameter): string
+     {
+         return $firstParameter . '-' . $secondParameter . '-' . $thirdParameter . '-' . $fourthParameter;
      }
 
 ```
