@@ -1,11 +1,8 @@
 {
     "name": "sdn/rector-custom-rules",
     "description": "These are a collection of custom rules for rector",
-    "type": "project",
     "version": "1.0.0",
     "license": "proprietary",
-    "minimum-stability": "stable",
-    "prefer-stable": true,
     "require": {
         "php": ">= 8.0 <= 8.4"
     },
