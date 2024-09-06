@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sdn\ItScopeService\Rector\CustomRules;
+namespace Sdn\RectorCustomRules\Rules;
 
 use PhpParser\Node\Expr\Variable;
 use PhpParser\Node\Identifier;

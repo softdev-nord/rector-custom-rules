@@ -17,7 +17,5 @@
             "email": "info@softdev-nord.de",
             "homepage": "https://softdev-nord.de"
         }
-    ],
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    ]
 }

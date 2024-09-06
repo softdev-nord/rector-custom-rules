@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sdn\ItScopeService\Rector\CustomRules;
+namespace Sdn\RectorCustomRules\Rules;
 
 use PhpParser\Comment\Doc;
 use PhpParser\Node;
